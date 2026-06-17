@@ -1,0 +1,74 @@
+{
+  "tests": [
+    {
+      "name": "Problem 1 dynamic library",
+      "setup": "",
+      "run": "bash autograder/problem1.sh",
+      "input": "",
+      "output": "PASS problem1",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 15
+    },
+    {
+      "name": "Problem 2 environment variables",
+      "setup": "",
+      "run": "bash autograder/problem2.sh",
+      "input": "",
+      "output": "PASS problem2",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 15
+    },
+    {
+      "name": "Problem 3 git merge conflict",
+      "setup": "",
+      "run": "bash autograder/problem3.sh",
+      "input": "",
+      "output": "PASS problem3",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 15
+    },
+    {
+      "name": "Problem 4 CMake project",
+      "setup": "",
+      "run": "bash autograder/problem4_7.sh cmake",
+      "input": "",
+      "output": "PASS problem4",
+      "comparison": "included",
+      "timeout": 15,
+      "points": 15
+    },
+    {
+      "name": "Problem 5 requirement tests",
+      "setup": "",
+      "run": "bash autograder/problem4_7.sh tests",
+      "input": "",
+      "output": "PASS problem5",
+      "comparison": "included",
+      "timeout": 15,
+      "points": 15
+    },
+    {
+      "name": "Problem 6 GDB session",
+      "setup": "",
+      "run": "bash autograder/problem4_7.sh gdb",
+      "input": "",
+      "output": "PASS problem6",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Problem 7 fixed behavior",
+      "setup": "",
+      "run": "bash autograder/problem4_7.sh fix",
+      "input": "",
+      "output": "PASS problem7",
+      "comparison": "included",
+      "timeout": 15,
+      "points": 15
+    }
+  ]
+}
