@@ -1,0 +1,9 @@
+4-7/build-*/
+4-7/build-debug/
+4-7/build-autograde/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Testing/
+*.o

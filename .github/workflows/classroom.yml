@@ -1,0 +1,31 @@
+name: GitHub Classroom Workflow
+
+on:
+  push:
+  workflow_dispatch:
+  repository_dispatch:
+
+jobs:
+  autograding:
+    name: Autograding
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    timeout-minutes: 15
+    permissions:
+      actions: read
+      checks: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install grading dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake gdb
+
+      - name: Run GitHub Classroom autograding
+        uses: education/autograding@v1
