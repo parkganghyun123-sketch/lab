@@ -11,7 +11,7 @@ int score_load_file(const char *path, ScoreBook *book) {
     book->count = 0;
 
     FILE *fp = fopen(path, "r");
-
+	if(fp == NULL) return -1;
     while (1) {
         char name[NAME_LEN];
         int score = 0;
@@ -65,7 +65,7 @@ int score_count_under_limit(const ScoreBook *book, int limit) {
     int selected = 0;
 
     for (int i = 0; i < book->count; i++) {
-        if (book->students[i].score < limit) {
+        if (book->students[i].score <= limit) {
             selected++;
         }
     }
@@ -76,11 +76,12 @@ int score_count_under_limit(const ScoreBook *book, int limit) {
 double score_average_under_limit(const ScoreBook *book, int limit) {
     int selected = score_count_under_limit(book, limit);
     int total = score_sum_under_limit(book, limit);
-
+	if(selected == 0) return 0.0;
     return (double)total / selected;
 }
 
 int score_max(const ScoreBook *book) {
+   if(book == NULL || book->count == 0) return 0;
     int max_score = book->students[0].score;
 
     for (int i = 1; i < book->count; i++) {
@@ -93,6 +94,7 @@ int score_max(const ScoreBook *book) {
 }
 
 int score_min(const ScoreBook *book) {
+	if(book == NULL || book->count ==0) return 0;
     int min_score = book->students[0].score;
 
     for (int i = 1; i < book->count; i++) {
